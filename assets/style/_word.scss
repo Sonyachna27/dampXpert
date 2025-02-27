@@ -1,0 +1,60 @@
+.work{
+	&__items{
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		& .btn{
+			background-color: $--dark;
+			margin: 0 auto;
+			&:after{
+				background-image: url('../images/arrow-black.svg');
+			}
+			&:hover{
+				background-color: $--orange;
+				color: $--white;
+				&:after{
+					background-image: url('../images/arrow-orang.svg');
+				}
+			}
+		}
+	}
+	&__gallery{
+		display: flex;
+		gap: 30px;
+		flex-wrap: wrap;
+		display: flex;
+	
+		&__item{
+			position: relative;
+			aspect-ratio: 302 / 300;
+			height: fit-content;
+			
+			width: 100%;
+			@media screen and (min-width:1024px) {
+				width: calc((100% / 4) - 23px);
+			}
+			@media screen and (min-width:768px) and (max-width:1023.9px){
+				width: calc((100% / 2) - 23px);
+			}
+			.simple{
+				width: fit-content;
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				background-color: $--orange;
+				color: $--white;
+				font-size: 12px;
+				font-style: normal;
+				font-weight: 800;
+				line-height: 140%;
+				padding: 4px;
+			}
+			img{
+				aspect-ratio: inherit;
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}

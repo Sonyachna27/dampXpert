@@ -1,0 +1,149 @@
+.reviews{
+	margin-bottom: 60px;
+	@media screen and (min-width:768px) {
+		margin-bottom: 120px;
+	}
+	&__arrows{
+		display: none;
+		
+		@media screen and (min-width:768px) {
+			display: flex;
+			gap: 10px;
+		}
+	}
+	&__arrow{
+		cursor: pointer;
+		transition: .3s linear;
+		max-width: 48px;
+		width: 100%;
+		aspect-ratio: 1;
+				svg{
+			rect, path{
+				transition: .3s linear;
+			}
+		}
+		&:hover{
+			rect{
+				fill: $--dark;
+			}
+			
+		}
+		&.swiper-button-disabled{
+			cursor: not-allowed;
+			rect{
+				fill:  #555555;
+			}
+		}
+	}
+	&__wrap{
+			display: flex;
+			gap: 30px;
+			flex-wrap: wrap;
+			@media screen  and (min-width:768px){
+				flex-direction: row;
+				
+			}
+	}
+	&-item{
+		padding: 40px;
+		border-radius: 10px;
+		border: 1px solid #E2E8F0;
+		height: auto;
+		width: 100%;
+		background-color: $--white;
+		display: flex;
+		flex-direction: column;
+		@media screen and (max-width:767px) {
+			padding: 20px;
+			min-width: 95%;
+		}
+
+		@media screen and (min-width:768px) and (max-width:1023.9px) {
+			width: calc((100% / 2) - 20px);
+		}
+		@media screen and (min-width:1024px) {
+			width: calc((100% / 3) - 20px);
+		}
+	
+	}
+	&-top{
+		display: flex;
+		margin-bottom: 20px;
+		gap: 10px;
+		flex-grow: 1;
+		height: 100%;
+		& img{
+			max-width: 50px;
+			max-height: 50px;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+		&-info{
+			flex-direction: column;
+			gap: 5px;
+			&-name{
+				color: var(--dark-blue-1, #16143E);
+				font-family: "Red Hat Display";
+				font-size: 14px;
+				font-style: normal;
+				font-weight: 700;
+				line-height: 140%;
+				@media screen and (max-width:767px) {
+					font-size: 16px;
+				}
+			}
+			&-rating{
+				display: flex;
+				align-items: center;
+				width: fit-content;
+				svg{
+					width: 14px;
+				}
+			}
+		}
+	}
+	&-bottom{
+			flex-grow: 1;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			& p{
+				font-size: 14px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 140%;
+			}
+		}
+		&__btns{
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			flex-direction: column;
+			@media screen and (min-width:768px) {
+				flex-direction: row;
+			}
+		&	.btn{
+			max-width: 100%;
+			width: 100%;
+		}
+		}
+	&-pagination.swiper-pagination-bullets{
+		width: fit-content;
+		z-index: 1;
+		margin: 0 auto;
+		& .swiper-pagination-bullet{
+			width: 10px;
+		height: 10px;
+		background: $--silver;
+		border-radius: 0;
+		opacity: 1;
+		cursor: pointer;
+		&.swiper-pagination-bullet-active{
+			background-color: $--orange;
+		}
+		}
+	}
+	
+}
