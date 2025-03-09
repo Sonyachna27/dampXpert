@@ -1091,6 +1091,10 @@ form fieldset input[type=radio]:checked:after {
   z-index: 0;
   background: #ED3B44;
 }
+.partners .marquee {
+  background: #fff;
+  padding: 40px 0;
+}
 .marquee__wrap {
   display: flex;
   width: -moz-max-content;
@@ -1099,6 +1103,10 @@ form fieldset input[type=radio]:checked:after {
   gap: 40px;
   transition: 0.3s linear;
   animation: marqueeLine var(--_animation-duration, 40s) var(--_animation-direction, reverse) linear infinite;
+}
+.partners .marquee__wrap {
+  animation-direction: normal;
+  animation-name: marqueeLineLarge;
 }
 .marquee span {
   color: var(--white, #FFF);
@@ -1115,10 +1123,22 @@ form fieldset input[type=radio]:checked:after {
 .marquee span svg {
   margin: auto 0;
 }
+.marquee span img {
+  max-width: 100%;
+  max-height: 140px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 310/140;
+}
 
 @keyframes marqueeLine {
   to {
     transform: translate(calc(-50% - 20px));
+  }
+}
+@keyframes marqueeLineLarge {
+  to {
+    transform: translate(calc(-50% - 10px));
   }
 }
 .discover {

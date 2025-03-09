@@ -284,13 +284,12 @@ const reviewsSliderInit = () =>{
 	const reviewsSlider = new Swiper(reviewsSliderWrap, {
 		slidesPerView: 1,
   spaceBetween: 10,
-  // Responsive breakpoints
   breakpoints: {
     320: {
       slidesPerView: 1,
       spaceBetween: 20
     },
-    640: {
+    768: {
       slidesPerView: 2,
     },
     1024: {
